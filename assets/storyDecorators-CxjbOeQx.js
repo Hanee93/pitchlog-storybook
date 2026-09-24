@@ -1,0 +1,4 @@
+import{i as e,s as t}from"./preload-helper-BdFrVu1K.js";import{O as n}from"./iframe-CwBxk0jx.js";function r(e){return`| 항목 | Material 3 | Apple HIG | pitchLog |
+|---|---|---|---|
+`+e.map(e=>`| ${e.join(` | `)} |`).join(`
+`)}var i,a,o,s,c=e((()=>{i=t(n(),1),a=e=>(0,i.createElement)(`div`,{className:`w-[354px]`},(0,i.createElement)(e)),o=e=>(0,i.createElement)(`div`,{className:`w-[402px]`},(0,i.createElement)(e)),s=e=>(0,i.createElement)(`div`,{className:`w-[402px] bg-pure-white p-6`},(0,i.createElement)(e)),a.__docgenInfo={description:``,methods:[],displayName:`contentWidth`},o.__docgenInfo={description:``,methods:[],displayName:`fullBleed`},s.__docgenInfo={description:``,methods:[],displayName:`onSurface`}}));export{r as a,s as i,o as n,c as r,a as t};

@@ -1,0 +1,11 @@
+import{i as e}from"./preload-helper-BdFrVu1K.js";import{t}from"./jsx-runtime-f3rHp9ZU.js";import{n,t as r}from"./cx-B8S8_Vys.js";function i({variant:e=`tint-neutral`,dot:t=!1,className:n,children:i}){return(0,a.jsxs)(`span`,{className:r(`inline-flex h-6 shrink-0 items-center gap-1.5 rounded-sm px-2 text-caption font-semibold whitespace-nowrap`,o[e],n),children:[t&&(0,a.jsx)(`span`,{"aria-hidden":`true`,className:`size-1.5 rounded-full bg-pitch-green`}),i]})}var a,o,s=e((()=>{n(),a=t(),o={"filled-neutral":`bg-ink text-pure-white`,"filled-volt":`bg-ink text-volt`,"filled-green":`bg-pitch-green text-pure-white`,"filled-red":`bg-red text-pure-white`,"tint-neutral":`bg-court-white text-ink`,"tint-volt":`bg-volt text-ink`,"tint-blue":`bg-sky-tint text-ink`,"tint-orange":`bg-orange-tint text-ink`,"tint-green":`bg-turf-tint text-ink`,"tint-red":`bg-red-tint text-red`,"outline-neutral":`border border-line-gray text-ink`},i.__docgenInfo={description:``,methods:[],displayName:`Badge`,props:{variant:{required:!1,tsType:{name:`union`,raw:`| 'filled-neutral'
+| 'filled-volt'
+| 'filled-green'
+| 'filled-red'
+| 'tint-neutral'
+| 'tint-volt'
+| 'tint-blue'
+| 'tint-orange'
+| 'tint-green'
+| 'tint-red'
+| 'outline-neutral'`,elements:[{name:`literal`,value:`'filled-neutral'`},{name:`literal`,value:`'filled-volt'`},{name:`literal`,value:`'filled-green'`},{name:`literal`,value:`'filled-red'`},{name:`literal`,value:`'tint-neutral'`},{name:`literal`,value:`'tint-volt'`},{name:`literal`,value:`'tint-blue'`},{name:`literal`,value:`'tint-orange'`},{name:`literal`,value:`'tint-green'`},{name:`literal`,value:`'tint-red'`},{name:`literal`,value:`'outline-neutral'`}]},description:`Figma Style + Tone. 존재하는 11개 조합만`,defaultValue:{value:`'tint-neutral'`,computed:!1}},dot:{required:!1,tsType:{name:`boolean`},description:`Figma Show dot. status/success 원형 6`,defaultValue:{value:`false`,computed:!1}},className:{required:!1,tsType:{name:`string`},description:``},children:{required:!0,tsType:{name:`string`},description:``}}}}));export{s as n,i as t};
