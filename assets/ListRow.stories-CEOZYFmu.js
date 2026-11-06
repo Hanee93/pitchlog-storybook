@@ -1,0 +1,18 @@
+import{i as e}from"./preload-helper-BdFrVu1K.js";import{t}from"./jsx-runtime-f3rHp9ZU.js";import{n,t as r}from"./ListRow-N0o4-EhK.js";import{a as i,i as a,r as o}from"./storyDecorators-CyXXSInj.js";import{n as s,t as c}from"./Icon-DcML_8tT.js";import{n as l,t as u}from"./Avatar-Bo7qEvZ9.js";import{n as d,t as f}from"./Badge-BmIrkUMe.js";import{n as p,t as m}from"./Divider-DVddqqaz.js";var h,g,_,v,y;e((()=>{n(),l(),d(),p(),s(),o(),h=t(),g={title:`Components/ListRow`,component:r,decorators:[a],args:{title:`최고속도`,sub:`지난 경기 27.1`,value:`28.4 km/h`,highlight:!1},argTypes:{highlight:{control:`boolean`,description:`Figma Highlight. 값을 data/accent로`},onClick:{action:`click`}},parameters:{docs:{description:{component:`[ListRow 69:354](https://www.figma.com/design/zINrAdy8XLijakU2ZKmDdT/%ED%94%BC%EC%B9%98%EB%A1%9C%EA%B7%B8?node-id=69-354), [Divider 69:335](https://www.figma.com/design/zINrAdy8XLijakU2ZKmDdT/%ED%94%BC%EC%B9%98%EB%A1%9C%EA%B7%B8?node-id=69-335). 높이 56(제목만) 또는 64(부제 포함), 하단 hairline. 제목 body/regular, 부제 caption text/secondary, 오른쪽 값 body/label 14 600. Highlight On은 값이 data/accent.
+
+**코드.** href가 있으면 a, onClick이 있으면 button, 둘 다 없으면 div. leading과 trailing 슬롯에 Avatar, Badge, 쉐브론을 넣는다. Divider는 폭 354 높이 1 hairline이고, 행 사이가 아니라 그룹 사이에 쓴다.
+
+### 플랫폼 참고
+
+${i([[`높이`,`List item one-line 56, two-line 72, three-line 88dp`,`Table view cell 44pt 기본, subtitle 스타일은 자동`,`56 / 64. M3 one-line과 같고, two-line은 M3보다 8 낮다. 부제가 caption 12라 72까지 필요 없다`],[`구분선`,`Divider 선택, 여백 권장`,`Separator inset(leading 텍스트 정렬)`,`hairline 필수, 풀폭(354). 카드 없이 헤어라인이 구조를 만든다`],[`오른쪽 값`,`Trailing supporting text, label small`,`Detail 텍스트 secondaryLabel 색, 또는 disclosure chevron`,`body/label 14 600 ink. 강조하면 data/accent. 값이 곧 내용이라 회색이 아니라 ink`],[`눌림`,`State layer ripple`,`셀 하이라이트 회색`,`hover bg/subtle, pressed hairline 색`],[`이동 표시`,`Trailing icon`,`Disclosure chevron 필수`,`trailing에 chevron-right 24 text/tertiary. 화면 이동일 때만`]])}`}}}},_={},v={name:`Highlight, 슬롯`,render:()=>(0,h.jsxs)(`div`,{className:`flex flex-col`,children:[(0,h.jsx)(r,{title:`최고속도`,value:`28.4 km/h`}),(0,h.jsx)(r,{title:`최고속도`,sub:`지난 경기 27.1`,value:`28.4 km/h`,highlight:!0}),(0,h.jsx)(r,{title:`김민수`,sub:`GK, 등번호 1`,value:`3골`,leading:(0,h.jsx)(u,{name:`김민수`,size:`sm`})}),(0,h.jsx)(r,{title:`박지훈`,sub:`참석 확정`,leading:(0,h.jsx)(u,{name:`박지훈`,size:`sm`}),trailing:(0,h.jsx)(f,{variant:`filled-green`,children:`참석`})}),(0,h.jsx)(r,{title:`경기 기록 전체`,onClick:()=>{},trailing:(0,h.jsx)(c,{name:`chevron-right`,size:24,className:`text-mist`}),divider:!1}),(0,h.jsx)(m,{className:`my-4`}),(0,h.jsx)(r,{title:`회비 납부 현황`,sub:`9월, 14명 중 11명`,value:`11 / 14`,divider:!1})]})},y=[`Playground`,`Variants`],_.parameters={..._.parameters,docs:{..._.parameters?.docs,source:{originalSource:`{}`,..._.parameters?.docs?.source}}},v.parameters={...v.parameters,docs:{...v.parameters?.docs,source:{originalSource:`{
+  name: 'Highlight, 슬롯',
+  render: () => <div className="flex flex-col">
+      <ListRow title="최고속도" value="28.4 km/h" />
+      <ListRow title="최고속도" sub="지난 경기 27.1" value="28.4 km/h" highlight />
+      <ListRow title="김민수" sub="GK, 등번호 1" value="3골" leading={<Avatar name="김민수" size="sm" />} />
+      <ListRow title="박지훈" sub="참석 확정" leading={<Avatar name="박지훈" size="sm" />} trailing={<Badge variant="filled-green">참석</Badge>} />
+      <ListRow title="경기 기록 전체" onClick={() => {}} trailing={<Icon name="chevron-right" size={24} className="text-mist" />} divider={false} />
+      <Divider className="my-4" />
+      <ListRow title="회비 납부 현황" sub="9월, 14명 중 11명" value="11 / 14" divider={false} />
+    </div>
+}`,...v.parameters?.docs?.source}}}}))();export{_ as Playground,v as Variants,y as __namedExportsOrder,g as default};
