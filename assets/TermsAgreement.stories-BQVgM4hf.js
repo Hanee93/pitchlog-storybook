@@ -1,0 +1,124 @@
+import{i as e,s as t}from"./preload-helper-BdFrVu1K.js";import{O as n}from"./iframe-ijBa-pNC.js";import{t as r}from"./jsx-runtime-f3rHp9ZU.js";import{n as i,t as a}from"./cx-B8S8_Vys.js";import{n as o,t as s}from"./Button-k3Kf7t_z.js";import{n as c,t as l}from"./Checkbox-X_N6kdb3.js";import{n as u,t as d}from"./Header-CP8p8QrJ.js";import{n as f,t as p}from"./IconButton-CTAY__f9.js";import{n as m,t as h}from"./Screen-BNtSZkdn.js";import{r as g,t as _}from"./BottomDock-DlQNs6Jd.js";import{n as v,t as y}from"./Divider-DVddqqaz.js";function b({items:e,checked:t,onChange:n,onOpen:r,className:i}){let o=e.filter(e=>t[e.id]).length,s=o===e.length,c=o>0&&!s,u=t=>n(Object.fromEntries(e.map(e=>[e.id,t]))),d=(e,r)=>n({...t,[e]:r});return(0,E.jsxs)(`div`,{className:a(`flex w-full flex-col`,i),children:[(0,E.jsx)(l,{label:`전체 동의`,checked:s,indeterminate:c,onChange:u,className:`flex h-(--size-button-md) w-full items-center [&>span:last-child]:font-semibold`}),(0,E.jsx)(y,{className:`my-2`}),e.map(e=>(0,E.jsx)(x,{item:e,checked:!!t[e.id],onChange:t=>d(e.id,t),onOpen:r&&e.doc?()=>r(e.doc):void 0},e.id))]})}function x({item:e,checked:t,onChange:n,onOpen:r}){let i=(0,T.useId)(),a=e.required?`필수`:`선택`;return(0,E.jsxs)(`div`,{className:`flex h-(--size-button-md) w-full items-center gap-3`,children:[(0,E.jsx)(l,{id:i,label:`${a} ${e.label}`,showLabel:!1,checked:t,onChange:n}),(0,E.jsxs)(`label`,{htmlFor:i,className:`flex min-w-0 flex-1 cursor-pointer items-center gap-1.5 select-none`,children:[(0,E.jsx)(`span`,{className:`shrink-0 text-body text-slate`,children:a}),(0,E.jsx)(`span`,{className:`truncate text-body text-ink`,children:e.label})]}),r&&(0,E.jsx)(p,{icon:`chevron-right`,label:`${e.label} 보기`,onClick:r,className:`-mr-2.5 text-mist`})]})}function S({doc:e,showTitle:t=!0,className:n}){return(0,E.jsxs)(`article`,{className:a(`flex w-full flex-col gap-6 px-6 pt-4 pb-6`,n),children:[t&&(0,E.jsxs)(`div`,{className:`flex flex-col gap-1`,children:[(0,E.jsx)(`h2`,{className:`text-app-heading font-semibold text-ink`,children:e.title}),(0,E.jsxs)(`p`,{className:`text-caption text-slate`,children:[`버전 `,e.version,`, `,C(e.effectiveDate),` 시행`]})]}),e.articles.map(e=>(0,E.jsxs)(`section`,{className:`flex flex-col gap-2`,children:[(0,E.jsx)(`h3`,{className:`text-app-heading-sm font-medium text-ink`,children:e.heading}),e.text.map((e,t)=>(0,E.jsx)(`p`,{className:`text-body-sm text-ink`,children:e},t)),e.list&&(0,E.jsx)(`ol`,{className:`flex list-decimal flex-col gap-1 pl-5 text-body-sm text-ink marker:text-slate`,children:e.list.map((e,t)=>(0,E.jsx)(`li`,{children:e},t))})]},e.heading))]})}function C(e){let[t,n,r]=e.split(`-`).map(Number);return`${t}년 ${n}월 ${r}일`}function w({title:e,children:t}){return(0,E.jsxs)(`div`,{className:`flex flex-col gap-2 px-6 pt-4 pb-6`,children:[(0,E.jsx)(`h2`,{className:`text-app-heading font-semibold text-ink`,children:e}),t&&(0,E.jsx)(`p`,{className:`text-body-sm text-slate`,children:t})]})}var T,E,D=e((()=>{T=t(n(),1),i(),c(),v(),f(),E=r(),b.__docgenInfo={description:``,methods:[],displayName:`AgreementList`,props:{items:{required:!0,tsType:{name:`Array`,elements:[{name:`signature`,type:`object`,raw:`{
+  id: AgreementId
+  label: string
+  required: boolean
+  /** 전문 화면이 있는 항목. 없으면 보기 버튼이 없다 */
+  doc?: TermsDoc
+}`,signature:{properties:[{key:`id`,value:{name:`union`,raw:`TermsId | 'age'`,elements:[{name:`union`,raw:`'service' | 'privacy' | 'tracking' | 'marketing'`,elements:[{name:`literal`,value:`'service'`},{name:`literal`,value:`'privacy'`},{name:`literal`,value:`'tracking'`},{name:`literal`,value:`'marketing'`}],required:!0},{name:`literal`,value:`'age'`}],required:!0}},{key:`label`,value:{name:`string`,required:!0}},{key:`required`,value:{name:`boolean`,required:!0}},{key:`doc`,value:{name:`signature`,type:`object`,raw:`{
+  id: TermsId
+  /** 동의 목록과 전문 화면 머리에 쓰는 이름 */
+  title: string
+  required: boolean
+  /** 동의 행 아래 한 줄 요약 */
+  summary: string
+  version: string
+  effectiveDate: string
+  articles: TermsArticle[]
+}`,signature:{properties:[{key:`id`,value:{name:`union`,raw:`'service' | 'privacy' | 'tracking' | 'marketing'`,elements:[{name:`literal`,value:`'service'`},{name:`literal`,value:`'privacy'`},{name:`literal`,value:`'tracking'`},{name:`literal`,value:`'marketing'`}],required:!0}},{key:`title`,value:{name:`string`,required:!0},description:`동의 목록과 전문 화면 머리에 쓰는 이름`},{key:`required`,value:{name:`boolean`,required:!0}},{key:`summary`,value:{name:`string`,required:!0},description:`동의 행 아래 한 줄 요약`},{key:`version`,value:{name:`string`,required:!0}},{key:`effectiveDate`,value:{name:`string`,required:!0}},{key:`articles`,value:{name:`Array`,elements:[{name:`signature`,type:`object`,raw:`{
+  heading: string
+  /** 문단. 순서대로 렌더링 */
+  text: string[]
+  /** 문단 뒤에 붙는 번호 목록 */
+  list?: string[]
+}`,signature:{properties:[{key:`heading`,value:{name:`string`,required:!0}},{key:`text`,value:{name:`Array`,elements:[{name:`string`}],raw:`string[]`,required:!0},description:`문단. 순서대로 렌더링`},{key:`list`,value:{name:`Array`,elements:[{name:`string`}],raw:`string[]`,required:!1},description:`문단 뒤에 붙는 번호 목록`}]}}],raw:`TermsArticle[]`,required:!0}}]},required:!1},description:`전문 화면이 있는 항목. 없으면 보기 버튼이 없다`}]}}],raw:`AgreementItem[]`},description:``},checked:{required:!0,tsType:{name:`Partial`,elements:[{name:`Record`,elements:[{name:`union`,raw:`TermsId | 'age'`,elements:[{name:`union`,raw:`'service' | 'privacy' | 'tracking' | 'marketing'`,elements:[{name:`literal`,value:`'service'`},{name:`literal`,value:`'privacy'`},{name:`literal`,value:`'tracking'`},{name:`literal`,value:`'marketing'`}]},{name:`literal`,value:`'age'`}]},{name:`boolean`}],raw:`Record<AgreementId, boolean>`}],raw:`Partial<Record<AgreementId, boolean>>`},description:``},onChange:{required:!0,tsType:{name:`signature`,type:`function`,raw:`(next: AgreementState) => void`,signature:{arguments:[{type:{name:`Partial`,elements:[{name:`Record`,elements:[{name:`union`,raw:`TermsId | 'age'`,elements:[{name:`union`,raw:`'service' | 'privacy' | 'tracking' | 'marketing'`,elements:[{name:`literal`,value:`'service'`},{name:`literal`,value:`'privacy'`},{name:`literal`,value:`'tracking'`},{name:`literal`,value:`'marketing'`}]},{name:`literal`,value:`'age'`}]},{name:`boolean`}],raw:`Record<AgreementId, boolean>`}],raw:`Partial<Record<AgreementId, boolean>>`},name:`next`}],return:{name:`void`}}},description:``},onOpen:{required:!1,tsType:{name:`signature`,type:`function`,raw:`(doc: TermsDoc) => void`,signature:{arguments:[{type:{name:`signature`,type:`object`,raw:`{
+  id: TermsId
+  /** 동의 목록과 전문 화면 머리에 쓰는 이름 */
+  title: string
+  required: boolean
+  /** 동의 행 아래 한 줄 요약 */
+  summary: string
+  version: string
+  effectiveDate: string
+  articles: TermsArticle[]
+}`,signature:{properties:[{key:`id`,value:{name:`union`,raw:`'service' | 'privacy' | 'tracking' | 'marketing'`,elements:[{name:`literal`,value:`'service'`},{name:`literal`,value:`'privacy'`},{name:`literal`,value:`'tracking'`},{name:`literal`,value:`'marketing'`}],required:!0}},{key:`title`,value:{name:`string`,required:!0},description:`동의 목록과 전문 화면 머리에 쓰는 이름`},{key:`required`,value:{name:`boolean`,required:!0}},{key:`summary`,value:{name:`string`,required:!0},description:`동의 행 아래 한 줄 요약`},{key:`version`,value:{name:`string`,required:!0}},{key:`effectiveDate`,value:{name:`string`,required:!0}},{key:`articles`,value:{name:`Array`,elements:[{name:`signature`,type:`object`,raw:`{
+  heading: string
+  /** 문단. 순서대로 렌더링 */
+  text: string[]
+  /** 문단 뒤에 붙는 번호 목록 */
+  list?: string[]
+}`,signature:{properties:[{key:`heading`,value:{name:`string`,required:!0}},{key:`text`,value:{name:`Array`,elements:[{name:`string`}],raw:`string[]`,required:!0},description:`문단. 순서대로 렌더링`},{key:`list`,value:{name:`Array`,elements:[{name:`string`}],raw:`string[]`,required:!1},description:`문단 뒤에 붙는 번호 목록`}]}}],raw:`TermsArticle[]`,required:!0}}]}},name:`doc`}],return:{name:`void`}}},description:`전문 보기. 없으면 쉐브론을 그리지 않는다`},className:{required:!1,tsType:{name:`string`},description:``}}},S.__docgenInfo={description:``,methods:[],displayName:`TermsDocument`,props:{doc:{required:!0,tsType:{name:`signature`,type:`object`,raw:`{
+  id: TermsId
+  /** 동의 목록과 전문 화면 머리에 쓰는 이름 */
+  title: string
+  required: boolean
+  /** 동의 행 아래 한 줄 요약 */
+  summary: string
+  version: string
+  effectiveDate: string
+  articles: TermsArticle[]
+}`,signature:{properties:[{key:`id`,value:{name:`union`,raw:`'service' | 'privacy' | 'tracking' | 'marketing'`,elements:[{name:`literal`,value:`'service'`},{name:`literal`,value:`'privacy'`},{name:`literal`,value:`'tracking'`},{name:`literal`,value:`'marketing'`}],required:!0}},{key:`title`,value:{name:`string`,required:!0},description:`동의 목록과 전문 화면 머리에 쓰는 이름`},{key:`required`,value:{name:`boolean`,required:!0}},{key:`summary`,value:{name:`string`,required:!0},description:`동의 행 아래 한 줄 요약`},{key:`version`,value:{name:`string`,required:!0}},{key:`effectiveDate`,value:{name:`string`,required:!0}},{key:`articles`,value:{name:`Array`,elements:[{name:`signature`,type:`object`,raw:`{
+  heading: string
+  /** 문단. 순서대로 렌더링 */
+  text: string[]
+  /** 문단 뒤에 붙는 번호 목록 */
+  list?: string[]
+}`,signature:{properties:[{key:`heading`,value:{name:`string`,required:!0}},{key:`text`,value:{name:`Array`,elements:[{name:`string`}],raw:`string[]`,required:!0},description:`문단. 순서대로 렌더링`},{key:`list`,value:{name:`Array`,elements:[{name:`string`}],raw:`string[]`,required:!1},description:`문단 뒤에 붙는 번호 목록`}]}}],raw:`TermsArticle[]`,required:!0}}]}},description:``},showTitle:{required:!1,tsType:{name:`boolean`},description:`머리(제목, 시행일)를 Header가 대신할 때 끈다`,defaultValue:{value:`true`,computed:!1}},className:{required:!1,tsType:{name:`string`},description:``}}},w.__docgenInfo={description:`동의 화면 머리. 제목 heading 24 + 설명 body-sm slate. 좌우 24, 위 16 아래 24`,methods:[],displayName:`AgreementIntro`,props:{title:{required:!0,tsType:{name:`string`},description:``},children:{required:!1,tsType:{name:`ReactNode`},description:``}}}}));function O(e,t){return e.filter(e=>e.required).every(e=>t[e.id])}var k,A,j,M,N,P,F,I=e((()=>{k={id:`service`,title:`서비스 이용약관`,required:!0,summary:`계정, 동호회, 경기 기록 서비스의 이용 조건`,version:`1.0`,effectiveDate:`2026-10-12`,articles:[{heading:`제1조(목적)`,text:[`이 약관은 피치로그(이하 "회사")가 제공하는 풋살 경기 기록 서비스 피치로그(이하 "서비스")의 이용 조건과 절차, 회사와 회원의 권리와 의무를 정합니다.`]},{heading:`제2조(용어의 정의)`,text:[`이 약관에서 쓰는 용어의 뜻은 다음과 같습니다.`],list:[`"서비스"란 UWB 태그와 카메라로 풋살 경기를 기록하고, 선수별 기록과 하이라이트 영상을 앱에서 보여주는 회사의 서비스를 말합니다.`,`"회원"이란 이 약관에 동의하고 계정을 만든 사람을 말합니다.`,`"동호회"란 회원들이 서비스 안에서 만든 모임으로, 경기 일정과 기록, 회비를 함께 관리하는 단위를 말합니다.`,`"매니저"와 "어드민"이란 동호회를 만들었거나 운영 권한을 받은 회원을 말합니다.`,`"경기 기록"이란 경기 중 수집한 위치, 속도, 이동 거리, 스프린트 횟수와 이를 가공한 능력치, 순위, 비교 수치를 말합니다.`,`"하이라이트"란 경기 영상 중 회사가 자동으로 잘라내어 회원에게 제공하는 짧은 영상을 말합니다.`,`"구장"이란 회사와 계약하여 트래킹 장비가 설치된 풋살장을 말합니다.`]},{heading:`제3조(약관의 게시와 개정)`,text:[`회사는 이 약관을 앱의 설정 화면과 회사 웹사이트에 게시합니다.`,`회사는 관련 법을 어기지 않는 범위에서 약관을 고칠 수 있습니다. 고친 약관은 적용일 7일 전부터 앱 안에서 알립니다. 회원에게 불리한 변경은 30일 전에 알리고 이메일이나 푸시 알림으로 따로 전합니다.`,`회원이 고친 약관의 적용일까지 거부 의사를 밝히지 않으면 고친 약관에 동의한 것으로 봅니다. 동의하지 않는 회원은 계정을 탈퇴할 수 있습니다.`]},{heading:`제4조(회원가입)`,text:[`서비스를 쓰려는 사람은 이름, 이메일, 비밀번호를 입력하고 이 약관과 개인정보 수집 및 이용, 경기 트래킹 데이터 수집 및 이용에 동의하면 회원이 됩니다.`,`만 14세 미만은 회원이 될 수 없습니다.`,`회사는 다음 경우 가입을 거절하거나 나중에 계정을 정지할 수 있습니다.`],list:[`다른 사람의 이름이나 이메일을 쓴 경우`,`허위 정보를 적은 경우`,`이전에 이 약관을 어겨 계정이 정지된 적이 있는 경우`,`서비스 운영을 방해할 목적이 분명한 경우`]},{heading:`제5조(서비스의 내용)`,text:[`회사는 회원에게 다음 서비스를 제공합니다.`],list:[`동호회 만들기, 멤버 초대와 역할 관리`,`경기 일정 등록, 참석 투표, 대기방`,`구장에서 치른 경기의 선수별 기록과 팀 기록`,`경기 하이라이트 영상 보기와 공유`,`동호회 회비 관리`,`그 밖에 회사가 추가로 개발하거나 제휴를 통해 제공하는 서비스`]},{heading:`제6조(경기 기록의 성격)`,text:[`경기 기록은 UWB 태그 신호와 카메라 영상을 바탕으로 자동으로 계산한 추정치입니다. 태그 착용 상태, 구장 환경, 신호 간섭에 따라 실제와 차이가 날 수 있습니다.`,`회사는 기록의 정확성을 높이려 노력하지만 기록이 정확하다는 것을 보증하지는 않습니다. 회원은 기록을 심판 판정, 공식 경기 결과, 의료 판단의 근거로 쓸 수 없습니다.`,`기록이 잘못 매칭되거나 빠진 경우 회원은 앱 안에서 정정을 요청할 수 있고, 회사는 원본 데이터를 확인하여 가능한 범위에서 고칩니다.`]},{heading:`제7조(태그와 장비)`,text:[`UWB 태그는 구장이 빌려주는 장비입니다. 회원은 경기 전 받은 태그를 착용하고 경기 후 돌려주어야 합니다.`,`회원의 고의나 중대한 과실로 태그가 망가지거나 사라진 경우 구장이 정한 기준에 따라 비용을 물 수 있습니다.`,`태그를 착용하지 않거나 다른 사람의 태그를 착용하면 기록이 생성되지 않거나 다른 회원에게 잘못 기록될 수 있으며, 회사는 이에 책임지지 않습니다.`]},{heading:`제8조(동호회와 역할)`,text:[`동호회를 만든 회원은 어드민이 되며 다른 회원에게 매니저 권한을 줄 수 있습니다.`,`어드민과 매니저는 동호회 안에서 경기 일정, 멤버, 회비를 관리할 수 있고, 이 과정에서 다른 멤버의 이름, 참석 여부, 경기 기록, 회비 납부 상태를 봅니다. 이 정보를 동호회 운영 외의 목적으로 쓸 수 없습니다.`,`회비는 회원들 사이의 약속이며 회사는 회비를 받거나 보관하지 않습니다. 회사는 회비 관리 기능만 제공하고 납부와 정산에 관한 분쟁에는 관여하지 않습니다.`,`어드민이 탈퇴하면 다음 매니저에게 권한이 넘어갑니다. 매니저가 없으면 동호회는 보관 상태가 되고 90일 뒤 삭제됩니다.`]},{heading:`제9조(회원의 의무)`,text:[`회원은 다음 행동을 해서는 안 됩니다.`],list:[`다른 사람의 계정이나 태그를 쓰는 행동`,`다른 회원의 기록이나 영상을 본인 동의 없이 서비스 밖으로 퍼뜨리거나 영리 목적으로 쓰는 행동`,`서비스의 데이터를 자동화 수단으로 긁거나 역설계하는 행동`,`구장의 트래킹 장비나 카메라를 옮기거나 가리거나 망가뜨리는 행동`,`다른 회원을 비방하거나 괴롭히는 행동`,`그 밖에 법령이나 이 약관을 어기는 행동`]},{heading:`제10조(콘텐츠의 권리)`,text:[`회원이 서비스에 올린 프로필 사진, 동호회 사진, 글의 권리는 회원에게 있습니다. 회원은 회사가 서비스를 운영하고 보여주는 데 필요한 범위에서 이를 쓰는 것을 허락합니다.`,`경기 기록과 하이라이트 영상을 만드는 시스템과 가공 결과의 권리는 회사에 있습니다. 회원은 본인이 나온 하이라이트를 개인적인 용도로 저장하고 공유할 수 있습니다.`,`회원이 하이라이트를 외부에 공유할 때 같은 영상에 나오는 다른 회원의 권리를 침해하지 않도록 주의해야 합니다.`]},{heading:`제11조(서비스의 변경과 중단)`,text:[`회사는 서비스의 내용을 바꾸거나 일부를 중단할 수 있습니다. 중요한 변경은 적용일 30일 전에 앱 안에서 알립니다.`,`구장의 장비 점검, 통신 장애, 천재지변 등으로 특정 경기의 기록이 생성되지 않을 수 있습니다. 이 경우 회사는 사유를 알리되 기록을 복구할 의무는 없습니다.`]},{heading:`제12조(계정 탈퇴와 이용 제한)`,text:[`회원은 언제든 앱의 설정에서 탈퇴할 수 있습니다. 탈퇴하면 개인정보 처리방침에 따라 개인정보를 지우고, 경기 기록은 개인을 알아볼 수 없게 처리한 뒤 통계에만 씁니다.`,`회원이 어드민인 동호회가 있으면 탈퇴 전에 다른 멤버에게 권한을 넘겨야 합니다.`,`회사는 회원이 제9조를 어긴 경우 사전 통지 후 서비스 이용을 제한하거나 계정을 정지할 수 있습니다. 급박한 피해가 예상되는 경우 먼저 제한하고 나중에 알릴 수 있습니다.`]},{heading:`제13조(책임의 범위)`,text:[`회사는 무료로 제공하는 서비스에 대해 회사의 고의나 중대한 과실이 없는 한 손해를 배상하지 않습니다.`,`회사는 회원들 사이, 회원과 구장 사이의 분쟁에 책임지지 않습니다. 다만 회사가 알게 된 분쟁에 대해 합리적인 범위에서 협조합니다.`,`풋살 경기 중 생기는 부상과 사고의 책임은 회사에 있지 않습니다. 서비스의 기록은 안전을 보장하거나 체력 상태를 진단하는 것이 아닙니다.`]},{heading:`제14조(준거법과 분쟁 해결)`,text:[`이 약관은 대한민국 법을 따릅니다. 서비스 이용과 관련한 분쟁은 회사와 회원이 먼저 협의하고, 협의가 되지 않으면 민사소송법에 따른 관할 법원에서 다룹니다.`]},{heading:`부칙`,text:[`이 약관은 2026년 10월 12일부터 적용됩니다.`]}]},A={id:`privacy`,title:`개인정보 수집 및 이용`,required:!0,summary:`이름, 이메일, 비밀번호와 프로필을 계정 운영에 사용`,version:`1.0`,effectiveDate:`2026-10-12`,articles:[{heading:`1. 수집하는 항목`,text:[`회사는 회원가입과 서비스 운영을 위해 다음 개인정보를 수집합니다.`],list:[`가입 시 필수: 이름, 이메일, 비밀번호`,`가입 시 선택: 프로필 사진, 포지션, 발`,`서비스 이용 중 자동 수집: 기기 정보(기기 모델, 운영체제 버전, 앱 버전), 푸시 토큰, 접속 기록, 서비스 이용 기록`,`초대 링크로 가입한 경우: 초대한 회원과 동호회 정보`]},{heading:`2. 이용 목적`,text:[`수집한 개인정보는 다음 목적에만 씁니다.`],list:[`계정 만들기, 본인 확인, 로그인 유지`,`동호회 안에서 다른 멤버에게 이름과 프로필 보여주기`,`경기 기록을 회원 본인에게 연결하기`,`공지, 참석 투표, 경기 결과 등 서비스 알림 보내기`,`문의 응대와 분쟁 처리`,`부정 이용 방지와 서비스 개선을 위한 통계 분석`]},{heading:`3. 보유 기간`,text:[`회원이 탈퇴하면 지체 없이 개인정보를 지웁니다. 다만 다음 정보는 적힌 기간 동안 보관합니다.`],list:[`부정 이용 방지를 위한 이메일 해시: 탈퇴 후 1년`,`전자상거래 등에서의 소비자보호에 관한 법률에 따른 소비자 불만과 분쟁 처리 기록: 3년`,`통신비밀보호법에 따른 접속 기록: 3개월`]},{heading:`4. 제3자 제공`,text:[`회사는 회원의 개인정보를 제3자에게 제공하지 않습니다. 다만 회원이 속한 동호회의 어드민과 매니저는 동호회 운영에 필요한 범위에서 회원의 이름, 프로필, 참석 여부, 경기 기록, 회비 납부 상태를 볼 수 있습니다.`,`법령에 따라 수사기관이나 법원이 적법한 절차로 요청하는 경우에는 제공할 수 있습니다.`]},{heading:`5. 처리 위탁`,text:[`회사는 서비스 운영을 위해 다음 업무를 외부에 맡깁니다. 위탁받는 회사와 업무 내용이 바뀌면 이 문서에 반영하고 앱 안에서 알립니다.`],list:[`클라우드 서버 운영과 데이터 보관`,`이메일과 푸시 알림 발송`,`앱 오류 수집과 성능 분석`]},{heading:`6. 회원의 권리`,text:[`회원은 언제든 앱의 설정에서 본인의 개인정보를 보고, 고치고, 지우고, 처리 정지를 요구할 수 있습니다. 앱에서 처리할 수 없는 요구는 아래 연락처로 보내면 10일 안에 답합니다.`,`만 14세 미만 아동의 개인정보는 수집하지 않습니다. 수집된 사실을 알게 되면 바로 지웁니다.`]},{heading:`7. 동의를 거부할 권리`,text:[`회원은 개인정보 수집과 이용에 동의하지 않을 수 있습니다. 다만 필수 항목의 동의를 거부하면 계정을 만들 수 없습니다. 선택 항목의 동의를 거부해도 서비스 이용에 제한은 없습니다.`]},{heading:`8. 개인정보 보호책임자`,text:[`개인정보 보호책임자: (확정 전)`,`연락처: (확정 전)`,`이 문서는 2026년 10월 12일부터 적용됩니다. 전체 개인정보 처리방침은 앱의 설정과 회사 웹사이트에서 볼 수 있습니다.`]}]},j={id:`tracking`,title:`경기 트래킹 데이터 수집 및 이용`,required:!0,summary:`경기 중 위치, 속도 데이터와 영상을 기록과 하이라이트에 사용`,version:`1.0`,effectiveDate:`2026-10-12`,articles:[{heading:`1. 무엇을 수집하나요`,text:[`회원이 태그를 착용하고 구장에서 경기를 치르면 다음 데이터가 수집됩니다.`],list:[`위치 데이터: UWB 태그가 보내는 경기장 안의 위치 좌표(초당 수십 회)`,`움직임 데이터: 위치 좌표에서 계산한 속도, 이동 거리, 스프린트 횟수, 활동량 구간`,`영상 데이터: 구장에 설치된 카메라가 촬영한 경기 영상과 그중 잘라낸 하이라이트`,`매칭 정보: 어떤 태그가 어느 회원의 것인지, 어느 경기의 어느 팀인지`]},{heading:`2. 어디까지가 범위인가요`,text:[`수집은 경기장 안, 경기 시간 동안에만 이루어집니다. 앱은 회원의 스마트폰 위치 정보를 쓰지 않으며, 구장 밖에서의 위치는 알 수 없습니다.`,`카메라는 코트를 향해 고정되어 있고 경기 시간에만 녹화합니다. 관중석이나 대기 공간은 촬영 범위에 넣지 않도록 설치하지만, 코트 가장자리에서 일부 찍힐 수 있습니다.`]},{heading:`3. 어디에 쓰나요`,text:[`수집한 데이터는 다음 목적에만 씁니다.`],list:[`회원 본인의 경기 기록(이동 거리, 최고 속도, 스프린트, 히트맵, 능력치) 만들기`,`같은 경기를 뛴 동호회 멤버와의 기록 비교, 동호회 안 순위`,`하이라이트 영상을 잘라내어 경기에 참여한 회원에게 보여주기`,`개인을 알아볼 수 없게 처리한 뒤 기록 산정 방식과 서비스 개선을 위한 분석`]},{heading:`4. 누가 볼 수 있나요`,text:[`회원의 경기 기록은 회원 본인과 같은 동호회의 멤버가 볼 수 있습니다. 동호회 밖의 회원이나 외부에는 공개되지 않습니다.`,`하이라이트 영상은 그 경기에 참여한 회원들이 볼 수 있습니다. 회원이 공유 기능으로 영상을 외부에 보내는 것은 회원 본인의 선택이며 책임입니다.`,`경기 영상 원본은 하이라이트를 만든 뒤 지우고, 회원에게 보여주지 않습니다.`]},{heading:`5. 얼마나 보관하나요`,text:[],list:[`위치와 움직임 데이터 원본: 경기 종료 후 30일. 기록 산정이 끝나면 지웁니다.`,`가공된 경기 기록: 회원이 탈퇴할 때까지. 회원은 경기별로 본인 기록을 지울 수 있습니다.`,`경기 영상 원본: 하이라이트를 만든 뒤 7일 안에 지웁니다.`,`하이라이트 영상: 경기 종료 후 1년. 회원은 본인이 나온 하이라이트의 삭제를 요청할 수 있습니다.`,`탈퇴 후: 개인을 알아볼 수 없게 처리한 통계만 남깁니다.`]},{heading:`6. 동의하지 않으면`,text:[`이 동의는 서비스의 핵심인 경기 기록을 만드는 데 꼭 필요합니다. 동의하지 않으면 계정을 만들 수 없습니다.`,`가입 뒤에도 특정 경기에서는 태그를 착용하지 않는 방식으로 기록 수집을 거부할 수 있습니다. 다만 카메라가 코트 전체를 촬영하므로 영상에는 담길 수 있습니다. 이 경우 회사는 회원의 요청에 따라 해당 경기의 하이라이트에서 회원을 식별할 수 있는 부분을 지웁니다.`]},{heading:`7. 동의를 철회하려면`,text:[`앱의 설정에서 언제든 동의를 철회할 수 있습니다. 철회하면 이후 경기에서 기록과 영상이 만들어지지 않고, 이미 만들어진 기록은 회원의 선택에 따라 남기거나 지웁니다. 철회 후에는 서비스의 기록 기능을 쓸 수 없습니다.`]}]},M={id:`marketing`,title:`마케팅 정보 수신`,required:!1,summary:`새 기능, 구장 소식, 이벤트를 푸시와 이메일로 받기`,version:`1.0`,effectiveDate:`2026-10-12`,articles:[{heading:`1. 받는 내용`,text:[`동의하면 다음 소식을 받습니다.`],list:[`새로 생긴 기능과 기록 항목 안내`,`제휴 구장의 오픈, 할인, 이벤트`,`동호회 활동을 돕는 팁과 통계 리포트`]},{heading:`2. 받는 방법`,text:[`앱 푸시 알림과 이메일로 보냅니다. 전송 시각은 오전 8시부터 오후 9시 사이로 제한합니다.`]},{heading:`3. 동의와 상관없이 받는 알림`,text:[`동호회 공지, 참석 투표, 경기 결과, 회비 안내, 약관 변경처럼 서비스 이용에 필요한 알림은 이 동의와 상관없이 보냅니다. 이런 알림은 앱의 알림 설정에서 종류별로 끌 수 있습니다.`]},{heading:`4. 철회`,text:[`언제든 앱의 설정이나 이메일 하단의 수신 거부 링크로 철회할 수 있습니다. 동의하지 않아도 서비스 이용에 제한은 없습니다.`]}]},N=[k,A,j,M],P={service:k,privacy:A,tracking:j,marketing:M},F=[{id:`age`,label:`만 14세 이상입니다`,required:!0},{id:`service`,label:k.title,required:!0,doc:k},{id:`privacy`,label:A.title,required:!0,doc:A},{id:`tracking`,label:j.title,required:!0,doc:j},{id:`marketing`,label:M.title,required:!1,doc:M}]}));function L({children:e}){return(0,H.jsx)(`div`,{className:`flex items-start gap-10`,children:e})}function R({name:e,children:t}){return(0,H.jsxs)(`div`,{className:`flex shrink-0 flex-col gap-3`,children:[(0,H.jsx)(`p`,{className:`text-body-sm text-slate`,children:e}),(0,H.jsx)(`div`,{className:`shadow-float-sm`,children:t})]})}function z({initial:e=W,onOpen:t=()=>{},onNext:n}){let[r,i]=(0,V.useState)(e);return(0,H.jsxs)(h,{fixedHeight:!0,header:(0,H.jsx)(d,{surface:!0,title:`회원가입`,left:(0,H.jsx)(p,{icon:`chevron-left`,label:`뒤로`})}),bottom:(0,H.jsx)(_,{children:(0,H.jsx)(s,{variant:`primary`,size:`lg`,disabled:!O(F,r),onClick:n,children:`동의하고 계속하기`})}),children:[(0,H.jsx)(w,{title:`약관에 동의해 주세요`,children:`경기 기록을 만들려면 위치와 영상 데이터 수집 동의가 필요해요. 선택 항목은 나중에 설정에서 바꿀 수 있어요.`}),(0,H.jsx)(b,{items:F,checked:r,onChange:i,onOpen:t,className:`px-6`})]})}function B({doc:e,onClose:t,onAgree:n}){return(0,H.jsx)(h,{fixedHeight:!0,header:(0,H.jsx)(d,{surface:!0,title:e.title,left:(0,H.jsx)(p,{icon:`close`,label:`닫기`,onClick:t})}),bottom:(0,H.jsx)(_,{children:(0,H.jsx)(s,{variant:`primary`,size:`lg`,onClick:n,children:`동의하기`})}),children:(0,H.jsx)(S,{doc:e,showTitle:!1})})}var V,H,U,W,G,K,q,J,Y,X,Z;e((()=>{V=t(n(),1),m(),u(),f(),o(),g(),D(),I(),H=r(),U={title:`Templates/약관 동의`,component:h,globals:{backgrounds:{value:`canvas`}},parameters:{layout:`padded`,docs:{description:{component:`회원가입 첫 화면. 초대 플로우의 수락 → 회원가입 사이에 들어간다. 왼쪽에서 오른쪽으로 읽는다.
+
+| 화면 | 뼈대 | 상태 |
+|---|---|---|
+| 약관 동의 | Header 뒤로 + AgreementIntro + AgreementList + BottomDock Primary | 초기(CTA 비활성) → 필수만(전체 동의 Indeterminate, CTA 활성) → 전체 동의 |
+| 약관 전문 | Header 닫기 + TermsDocument + BottomDock Primary 동의하기 | 동의하기를 누르면 그 항목이 켜진 채 동의 화면으로 돌아온다 |
+
+규칙: 전체 동의는 머리 행 하나, 라벨 600, 아래 Divider. 항목 행은 CheckboxRow와 같은 44 높이에 필수/선택을 slate로 앞에 붙이고 전문이 있는 항목만 오른쪽에 쉐브론(mist). 나이 확인은 문서가 없어 쉐브론이 없다. 선택 항목을 꺼도 CTA는 열린다. 전문 화면의 동의하기는 해당 항목만 켠다. 문구는 "동의하고 계속하기", 전문은 "동의하기".
+
+약관 본문(이용약관 14조, 개인정보 8항, 트래킹 데이터 7항, 마케팅 4항)은 \`src/data/terms.ts\`에 있고 docs/terms.md가 같은 내용이다. 사업자 정보와 개인정보 보호책임자는 확정 전이라 빈 칸이며 법무 검토 전 초안이다.`}}}},W={},G={age:!0,service:!0,privacy:!0,tracking:!0},K={...G,marketing:!0},q={args:{children:null},render:()=>(0,H.jsxs)(L,{children:[(0,H.jsx)(R,{name:`1 초기 (CTA 비활성)`,children:(0,H.jsx)(z,{})}),(0,H.jsx)(R,{name:`2 필수만 동의 (전체 동의 Indeterminate)`,children:(0,H.jsx)(z,{initial:G})}),(0,H.jsx)(R,{name:`3 전체 동의`,children:(0,H.jsx)(z,{initial:K})})]})},J={args:{children:null},render:()=>(0,H.jsx)(L,{children:N.map(e=>(0,H.jsx)(R,{name:`${e.required?`필수`:`선택`} ${e.title}`,children:(0,H.jsx)(B,{doc:e})},e.id))})},Y={args:{children:null},render:function(){let[e,t]=(0,V.useState)(W),[n,r]=(0,V.useState)(null),[i,a]=(0,V.useState)(!1);return n?(0,H.jsx)(B,{doc:n,onClose:()=>r(null),onAgree:()=>{t(e=>({...e,[n.id]:!0})),r(null)}}):(0,H.jsxs)(`div`,{className:`flex flex-col gap-3`,children:[(0,H.jsxs)(h,{fixedHeight:!0,header:(0,H.jsx)(d,{surface:!0,title:`회원가입`,left:(0,H.jsx)(p,{icon:`chevron-left`,label:`뒤로`})}),bottom:(0,H.jsx)(_,{children:(0,H.jsx)(s,{variant:`primary`,size:`lg`,disabled:!O(F,e),onClick:()=>a(!0),children:`동의하고 계속하기`})}),children:[(0,H.jsx)(w,{title:`약관에 동의해 주세요`,children:`경기 기록을 만들려면 위치와 영상 데이터 수집 동의가 필요해요. 선택 항목은 나중에 설정에서 바꿀 수 있어요.`}),(0,H.jsx)(b,{items:F,checked:e,onChange:t,onOpen:r,className:`px-6`})]}),i&&(0,H.jsxs)(`p`,{className:`text-body-sm text-slate`,children:[`다음: 회원가입 폼 (초대 플로우 2번 화면). 마케팅 동의: `,e.marketing?`예`:`아니요`]})]})}},X={args:{children:null},render:()=>(0,H.jsx)(`div`,{className:`w-[402px] bg-pure-white shadow-float-sm`,children:(0,H.jsx)(S,{doc:P.tracking})})},Z=[`동의화면`,`약관전문`,`플로우`,`트래킹데이터전문`],q.parameters={...q.parameters,docs:{...q.parameters?.docs,source:{originalSource:`{
+  args: {
+    children: null
+  },
+  render: () => <Flow>
+      <Frame name="1 초기 (CTA 비활성)">
+        <AgreementScreen />
+      </Frame>
+      <Frame name="2 필수만 동의 (전체 동의 Indeterminate)">
+        <AgreementScreen initial={REQUIRED_ONLY} />
+      </Frame>
+      <Frame name="3 전체 동의">
+        <AgreementScreen initial={ALL} />
+      </Frame>
+    </Flow>
+}`,...q.parameters?.docs?.source},description:{story:`동의 화면 세 상태`,...q.parameters?.docs?.description}}},J.parameters={...J.parameters,docs:{...J.parameters?.docs,source:{originalSource:`{
+  args: {
+    children: null
+  },
+  render: () => <Flow>
+      {TERMS.map(doc => <Frame key={doc.id} name={\`\${doc.required ? '필수' : '선택'} \${doc.title}\`}>
+          <DocumentScreen doc={doc} />
+        </Frame>)}
+    </Flow>
+}`,...J.parameters?.docs?.source},description:{story:`약관 전문 네 장. 문서는 src/data/terms.ts`,...J.parameters?.docs?.description}}},Y.parameters={...Y.parameters,docs:{...Y.parameters?.docs,source:{originalSource:`{
+  args: {
+    children: null
+  },
+  render: function Render() {
+    const [checked, setChecked] = useState<AgreementState>(NONE);
+    const [open, setOpen] = useState<TermsDoc | null>(null);
+    const [done, setDone] = useState(false);
+    if (open) {
+      return <DocumentScreen doc={open} onClose={() => setOpen(null)} onAgree={() => {
+        setChecked(c => ({
+          ...c,
+          [open.id]: true
+        }));
+        setOpen(null);
+      }} />;
+    }
+    return <div className="flex flex-col gap-3">
+        <Screen fixedHeight header={<Header surface title="회원가입" left={<IconButton icon="chevron-left" label="뒤로" />} />} bottom={<BottomDock>
+              <Button variant="primary" size="lg" disabled={!isRequiredAgreed(AGREEMENTS, checked)} onClick={() => setDone(true)}>
+                동의하고 계속하기
+              </Button>
+            </BottomDock>}>
+          <AgreementIntro title="약관에 동의해 주세요">경기 기록을 만들려면 위치와 영상 데이터 수집 동의가 필요해요. 선택 항목은 나중에 설정에서 바꿀 수 있어요.</AgreementIntro>
+          <AgreementList items={AGREEMENTS} checked={checked} onChange={setChecked} onOpen={setOpen} className="px-6" />
+        </Screen>
+        {done && <p className="text-body-sm text-slate">다음: 회원가입 폼 (초대 플로우 2번 화면). 마케팅 동의: {checked.marketing ? '예' : '아니요'}</p>}
+      </div>;
+  }
+}`,...Y.parameters?.docs?.source},description:{story:`실제 전환. 쉐브론으로 전문을 열고 동의하기로 돌아온다`,...Y.parameters?.docs?.description}}},X.parameters={...X.parameters,docs:{...X.parameters?.docs,source:{originalSource:`{
+  args: {
+    children: null
+  },
+  render: () => <div className="w-[402px] bg-pure-white shadow-float-sm">
+      <TermsDocument doc={TERMS_BY_ID.tracking} />
+    </div>
+}`,...X.parameters?.docs?.source},description:{story:`전문 한 장을 크게. 문서 탭에서 본문 전체를 읽는 용도`,...X.parameters?.docs?.description}}}}))();export{Z as __namedExportsOrder,U as default,q as 동의화면,J as 약관전문,X as 트래킹데이터전문,Y as 플로우};
